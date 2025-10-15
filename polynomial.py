@@ -8,8 +8,9 @@ def evaluate_polynomial(degree, x, constant_term, *coefficients):
 
     while k <= degree:
         num = coefficients[n]
-        S = num * (x ** k)
-        k = k+1
+        S += num * (x ** k)
+        k +=1
+        n +=1
     
     return S
 
@@ -20,11 +21,19 @@ if __name__ == "__main__":
     # TODO: Call evaluate_polynomial function
     # TODO: Ask user if they want to run again
 
-    enterX = int(input("Enter x: "))
-    enterDegree = int(input("Enter degree: "))
-    enterConstant = int(input("Enter constant: "))
-    enterCoefficient = int(input("Enter coeefficient: "))
+    stuff = "y"
 
-    evaluate_polynomial(enterDegree, enterX, enterConstant, enterCoefficient)
+    while(answer=="y"):
+        enterX = int(input("Enter x: "))
+        enterDegree = int(input("Enter degree: "))
+        enterConstant = int(input("Enter constant: "))
+        coefficients = ()
 
-    pass
+        for i in range(1, enterDegree+1):
+            coefficients += (int(input(f"Coefficient of the x^{i} term" )),)
+        
+        print("")
+        print("P(x) = " + str(evaluate_polynomial(enterDegree, enterX, enterConstant, enterCoefficient)))
+        print("")
+        anwer = input("do you want another poly? (y/n): ")
+        print("")
