@@ -19,4 +19,12 @@ if __name__ == "__main__":
     # TODO: Get user input for degree, x, constant term, and coefficients
     # TODO: Call evaluate_polynomial function
     # TODO: Ask user if they want to run again
+
+    enterX = int(input("Enter x: "))
+    enterDegree = int(input("Enter degree: "))
+    enterConstant = int(input("Enter constant: "))
+    enterCoefficient = int(input("Enter coeefficient: "))
+
+    evaluate_polynomial(enterDegree, enterX, enterConstant, enterCoefficient)
+
     pass
