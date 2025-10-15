@@ -7,6 +7,8 @@ def evaluate_polynomial(degree, x, constant_term, *coefficients):
     n = 0
 
     while k < n:
+        num = coefficients[n]
+        n+=1
         S += constant_term*(x**k)
         k = k+1
     
