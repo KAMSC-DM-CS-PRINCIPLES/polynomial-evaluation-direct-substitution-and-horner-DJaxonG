@@ -4,9 +4,9 @@ def evaluate_polynomial_horner(degree, x, constant_term, *coefficients):
     # TODO: Return final polynomial result
     S = constant_term
     k = 1
-    n = 0
+    n = degree
     while k <= degree:
-        num = coefficients[n]
+        num = coefficients[n-k]
         S = x*S+num
         k += 1
     
