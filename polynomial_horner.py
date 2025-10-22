@@ -1,17 +1,19 @@
-def evaluate_polynomial_horner(degree, x, constant_term, *coefficients):
+def evaluate_polynomial_horner(degree, x, constant_term, coefficients):
     # TODO: Implement polynomial evaluation using Horner's method
     # TODO: Print step-by-step evaluation (S0, S1, S2, etc.)
     # TODO: Return final polynomial result
-    S = coefficients[degree-1]
+    S = coefficients[len(coefficients)-1]
+    print(S)
     k = 1
     n = degree
     while k <= degree:
         num = coefficients[n-k]
         S = x*S+num
         k += 1
+        print(f"num{num} S{S} k{k}")
+    S*=x
+    S+=constant_term
     return S
-
-
 
 
 if __name__ == "__main__":
@@ -19,16 +21,16 @@ if __name__ == "__main__":
     # TODO: Get user input for degree, x, constant term, and coefficients
     # TODO: Call evaluate_polynomial_horner function
     # TODO: Ask user if they want to run again
-    stuff = "y"
+    answer = "y"
 
     while(answer=="y"):
         enterX = int(input("Enter x: "))
         enterDegree = int(input("Enter degree: "))
         enterConstant = int(input("Enter constant: "))
-        coefficients = ()
+        coefficients = []
 
-        for i in range(1, enterDegree+1):
-            coefficients += (int(input(f"Coefficient of the x^{i} term" )),)
+        for i in range(0, enterDegree+1):
+            coefficients += (int(input(f"Coefficient of the x^{i+1} term" )),)
         
         print("")
         print("P(x) = " + str(evaluate_polynomial_horner(enterDegree, enterX, enterConstant, coefficients)))
