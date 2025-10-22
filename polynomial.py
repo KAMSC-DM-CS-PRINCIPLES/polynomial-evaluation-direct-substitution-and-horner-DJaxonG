@@ -33,7 +33,7 @@ if __name__ == "__main__":
             coefficients += (int(input(f"Coefficient of the x^{i} term" )),)
         
         print("")
-        print("P(x) = " + str(evaluate_polynomial(enterDegree, enterX, enterConstant, enterCoefficient)))
+        print("P(x) = " + str(evaluate_polynomial(enterDegree, enterX, enterConstant, coefficients)))
         print("")
-        anwer = input("do you want another poly? (y/n): ")
+        answer = input("do you want another poly? (y/n): ")
         print("")
