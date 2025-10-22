@@ -21,7 +21,7 @@ if __name__ == "__main__":
     # TODO: Call evaluate_polynomial function
     # TODO: Ask user if they want to run again
 
-    stuff = "y"
+    answer = "y"
 
     while(answer=="y"):
         enterX = int(input("Enter x: "))
@@ -29,7 +29,7 @@ if __name__ == "__main__":
         enterConstant = int(input("Enter constant: "))
         coefficients = ()
 
-        for i in range(1, enterDegree+1):
+        for i in range(0, enterDegree+1):
             coefficients += (int(input(f"Coefficient of the x^{i} term" )),)
         
         print("")
