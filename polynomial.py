@@ -2,6 +2,18 @@ def evaluate_polynomial(degree, x, constant_term, *coefficients):
     # TODO: Implement polynomial evaluation using direct substitution method
     # TODO: Print step-by-step evaluation (S0, S1, S2, etc.)
     # TODO: Return final polynomial result oko
+    S = constant_term
+    k = 1
+    n = 0
+
+    while k <= degree:
+        num = coefficients[n]
+        S += num * (x ** k)
+        k +=1
+        n +=1
+    
+    return S
+
 
 if __name__ == "__main__":
     # TODO: Add main program loop
@@ -9,4 +21,19 @@ if __name__ == "__main__":
     # TODO: Call evaluate_polynomial function
     # TODO: Ask user if they want to run again
 
+    answer = "y"
 
+    while(answer=="y"):
+        enterX = int(input("Enter x: "))
+        enterDegree = int(input("Enter degree: "))
+        enterConstant = int(input("Enter constant: "))
+        coefficients = ()
+
+        for i in range(0, enterDegree+1):
+            coefficients += (int(input(f"Coefficient of the x^{i} term" )),)
+        
+        print("")
+        print("P(x) = " + str(evaluate_polynomial(enterDegree, enterX, enterConstant, coefficients)))
+        print("")
+        answer = input("do you want another poly? (y/n): ")
+        print("")
