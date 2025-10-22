@@ -2,14 +2,13 @@ def evaluate_polynomial_horner(degree, x, constant_term, *coefficients):
     # TODO: Implement polynomial evaluation using Horner's method
     # TODO: Print step-by-step evaluation (S0, S1, S2, etc.)
     # TODO: Return final polynomial result
-    S = coefficients[degree]
+    S = coefficients[degree-1]
     k = 1
     n = degree
     while k <= degree:
         num = coefficients[n-k]
         S = x*S+num
         k += 1
-    
     return S
 
 
